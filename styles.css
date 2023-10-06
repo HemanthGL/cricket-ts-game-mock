@@ -9,12 +9,13 @@ table, td{
     margin: 8vh 0vw;
     text-align: center;
 }
-.results-window{
+#results-window{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     text-align: center;
     margin: 4vh 0vw;
+    padding-bottom: 4vh;
 }
 
 .score-card{
@@ -22,10 +23,12 @@ table, td{
     justify-content: space-evenly;
 }
 
-.results-toggle{
+.results-toggle, #res-gen-encl, #man-match-encl{
     display: flex;
     justify-content: center;
+    margin: 2vh 0px;
 }
-.gen-res, .man-match{
-    text-align: center;
+
+#new-match-id{
+    max-width: 3vw;
 }

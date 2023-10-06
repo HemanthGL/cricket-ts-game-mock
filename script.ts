@@ -302,6 +302,8 @@ document.getElementById('match-resultGen')?.addEventListener('click', () =>{
         console.log('This is ending here after man match')
 
         let ref_btn = document.createElement('button')
+        ref_btn.setAttribute('id', 'new-match-id')
+        ref_btn.style.maxWidth = '40px'
         ref_btn.textContent = 'NEW MATCH'
         ref_btn.addEventListener('click', () => { window.location.reload()})
         document.getElementById('results-window')!.appendChild(ref_btn);
