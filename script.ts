@@ -50,7 +50,8 @@ let t1 = new Team()
 let t2 = new Team()
 
 let inningActive:boolean = false;
-let time:number = 24;
+
+let time:number = 10;
 // TIMER SECTION
 
 function timerFor1S(){
@@ -80,7 +81,7 @@ document.getElementById('match-startBtn')?.addEventListener('click', async () =>
         let permit_val = await setTimeout(timerFor1S, 1000);
         setTimeout(() => {
             inningActive = false;
-            time = 24;
+            time = 10;
             document.getElementById('timer-dial')!.innerHTML = time.toString()
             inningActive = false;
             console.log('inning turned inactive')
@@ -100,7 +101,7 @@ document.getElementById('match-startBtn')?.addEventListener('click', async () =>
                 resRel = true;
                 console.log('result can be released now')
             }
-        }, 26000);
+        }, 13000);
         // let time_attr = document.getElementById('timer-dial');
         // let val_end = time_attr.textContent;
         // console.log('value here is: ', val_end)
@@ -170,7 +171,7 @@ document.getElementById('t1-hitBtn')?.addEventListener('click', () => {
         currPlayer = 1
         // inningActive = false;
         console.log('inning made inactive again midway before timer ')
-        document.getElementById('timer-dial')!.textContent = "24"
+        document.getElementById('timer-dial')!.textContent = "10"
         nextTeam = true;
         // team1Go = false;
     }
@@ -303,10 +304,11 @@ document.getElementById('match-resultGen')?.addEventListener('click', () =>{
 
         let ref_btn = document.createElement('button')
         ref_btn.setAttribute('id', 'new-match-id')
-        ref_btn.style.maxWidth = '40px'
+        console.log(ref_btn)
+        ref_btn.style.maxWidth = "6vw";
         ref_btn.textContent = 'NEW MATCH'
         ref_btn.addEventListener('click', () => { window.location.reload()})
-        document.getElementById('results-window')!.appendChild(ref_btn);
+        document.getElementById('rematch-encl')!.appendChild(ref_btn);
         resRel = false
     }
 })

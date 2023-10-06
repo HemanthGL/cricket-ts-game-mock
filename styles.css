@@ -23,12 +23,12 @@ table, td{
     justify-content: space-evenly;
 }
 
-.results-toggle, #res-gen-encl, #man-match-encl{
+.results-toggle, #res-gen-encl, #man-match-encl, #rematch-encl{
     display: flex;
     justify-content: center;
     margin: 2vh 0px;
 }
 
 #new-match-id{
-    max-width: 3vw;
+    max-width: 50px;
 }

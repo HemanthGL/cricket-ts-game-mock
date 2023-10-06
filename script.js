@@ -73,7 +73,7 @@ var nextTeam = false;
 var t1 = new Team();
 var t2 = new Team();
 var inningActive = false;
-var time = 24;
+var time = 10;
 // TIMER SECTION
 function timerFor1S() {
     if (time == 0) {
@@ -103,7 +103,7 @@ function timerFor1S() {
                 permit_val_1 = _a.sent();
                 setTimeout(function () {
                     inningActive = false;
-                    time = 24;
+                    time = 10;
                     document.getElementById('timer-dial').innerHTML = time.toString();
                     inningActive = false;
                     console.log('inning turned inactive');
@@ -124,7 +124,7 @@ function timerFor1S() {
                         resRel = true;
                         console.log('result can be released now');
                     }
-                }, 26000);
+                }, 13000);
                 _a.label = 2;
             case 2: return [2 /*return*/];
         }
@@ -184,7 +184,7 @@ function timerFor1S() {
         currPlayer = 1;
         // inningActive = false;
         console.log('inning made inactive again midway before timer ');
-        document.getElementById('timer-dial').textContent = "24";
+        document.getElementById('timer-dial').textContent = "10";
         nextTeam = true;
         // team1Go = false;
     }
@@ -302,9 +302,12 @@ function timerFor1S() {
         }
         console.log('This is ending here after man match');
         var ref_btn = document.createElement('button');
+        ref_btn.setAttribute('id', 'new-match-id');
+        console.log(ref_btn);
+        ref_btn.style.maxWidth = "6vw";
         ref_btn.textContent = 'NEW MATCH';
         ref_btn.addEventListener('click', function () { window.location.reload(); });
-        document.getElementById('results-window').appendChild(ref_btn);
+        document.getElementById('rematch-encl').appendChild(ref_btn);
         resRel = false;
     }
 });
