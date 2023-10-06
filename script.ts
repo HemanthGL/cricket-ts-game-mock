@@ -60,7 +60,7 @@ function timerFor1S(){
         return true;
     }
     time -= 1
-    document.getElementById('timer-dial').innerHTML = time.toString();
+    document.getElementById('timer-dial')!.innerHTML = time.toString();
 
     return setTimeout(timerFor1S, 1000);
 }
@@ -81,7 +81,7 @@ document.getElementById('match-startBtn')?.addEventListener('click', async () =>
         setTimeout(() => {
             inningActive = false;
             time = 24;
-            document.getElementById('timer-dial').innerHTML = time.toString()
+            document.getElementById('timer-dial')!.innerHTML = time.toString()
             inningActive = false;
             console.log('inning turned inactive')
             console.log(permit_val)
@@ -132,8 +132,8 @@ document.getElementById('t1-hitBtn')?.addEventListener('click', () => {
 
     // Updates into HTML: teamscore, ballscore, playerscore
     if (sc == 0){
-        document.getElementById(`t1-p${currPlayer}-b${currBall}`)?.innerText = 'W'
-        document.getElementById(`t1-p${currPlayer}-total-score`)?.innerText = t1.tot_score[currPlayer-1].toString();
+        document.getElementById(`t1-p${currPlayer}-b${currBall}`)!.innerText = 'W'
+        document.getElementById(`t1-p${currPlayer}-total-score`)!.innerText = t1.tot_score[currPlayer-1].toString();
         if (currPlayer == 10){
             // call condition for inning end
             // currPlayer = 1
@@ -145,11 +145,11 @@ document.getElementById('t1-hitBtn')?.addEventListener('click', () => {
         }
     }
     else{
-        document.getElementById(`t1-p${currPlayer}-b${currBall}`)?.innerText = sc.toString();
-        document.getElementById(`t1-p${currPlayer}-total-score`)?.innerText = t1.tot_score[currPlayer-1].toString();
+        document.getElementById(`t1-p${currPlayer}-b${currBall}`)!.innerText = sc.toString();
+        document.getElementById(`t1-p${currPlayer}-total-score`)!.innerText = t1.tot_score[currPlayer-1].toString();
     }
 
-    document.getElementById(`team1Score`)?.innerText = t1.team_score.toString();
+    document.getElementById(`team1Score`)!.innerText = t1.team_score.toString();
     currBall += 1
     if (currBall == 7){
         currBall = 1
@@ -170,7 +170,7 @@ document.getElementById('t1-hitBtn')?.addEventListener('click', () => {
         currPlayer = 1
         // inningActive = false;
         console.log('inning made inactive again midway before timer ')
-        document.getElementById('timer-dial').textContent = "24"
+        document.getElementById('timer-dial')!.textContent = "24"
         nextTeam = true;
         // team1Go = false;
     }
@@ -195,8 +195,8 @@ document.getElementById('t2-hitBtn')?.addEventListener('click', () => {
 
     // Updates into HTML: teamscore, ballscore, playerscore
     if (sc == 0){
-        document.getElementById(`t2-p${currPlayer}-b${currBall}`)?.innerText = 'W'
-        document.getElementById(`t2-p${currPlayer}-total-score`)?.innerText = t2.tot_score[currPlayer-1].toString();
+        document.getElementById(`t2-p${currPlayer}-b${currBall}`)!.innerText = 'W'
+        document.getElementById(`t2-p${currPlayer}-total-score`)!.innerText = t2.tot_score[currPlayer-1].toString();
         if (currPlayer == 10){
             // call condition for inning end
             // currPlayer = 1
@@ -208,10 +208,10 @@ document.getElementById('t2-hitBtn')?.addEventListener('click', () => {
         }
     }
     else{
-        document.getElementById(`t2-p${currPlayer}-b${currBall}`)?.innerText = sc.toString();
-        document.getElementById(`t2-p${currPlayer}-total-score`)?.innerText = t2.tot_score[currPlayer-1].toString();
+        document.getElementById(`t2-p${currPlayer}-b${currBall}`)!.innerText = sc.toString();
+        document.getElementById(`t2-p${currPlayer}-total-score`)!.innerText = t2.tot_score[currPlayer-1].toString();
     }
-    document.getElementById(`team2Score`)?.innerText = t2.team_score.toString();
+    document.getElementById(`team2Score`)!.innerText = t2.team_score.toString();
     currBall += 1
     if (currBall == 7){
         currBall = 1
@@ -235,12 +235,12 @@ document.getElementById('t2-hitBtn')?.addEventListener('click', () => {
 
 })
 
-document.getElementById('match-resultGen').addEventListener('click', () =>{
+document.getElementById('match-resultGen')?.addEventListener('click', () =>{
 
     console.log('match res called')
     if (resRel){
         console.log('match res fn entered succesfully')
-        let ele = document.getElementById('gen-res')
+        let ele = document.getElementById('gen-res')!
         if (t1.team_score > t2.team_score){
             ele.textContent = `Match Won by Team 1 by ${t1.team_score - t2.team_score} runs`
         }
@@ -251,7 +251,7 @@ document.getElementById('match-resultGen').addEventListener('click', () =>{
             ele.textContent = `Match DRAW`;
         }
 
-        let ele2 = document.getElementById('man-match')
+        let ele2 = document.getElementById('man-match')!
 
         if (t1.team_score > t2.team_score){
             
@@ -303,8 +303,8 @@ document.getElementById('match-resultGen').addEventListener('click', () =>{
 
         let ref_btn = document.createElement('button')
         ref_btn.textContent = 'NEW MATCH'
-        ref_btn.addEventListener('click', () => { window.location.reload(true)})
-        document.getElementById('results-window').appendChild(ref_btn);
+        ref_btn.addEventListener('click', () => { window.location.reload()})
+        document.getElementById('results-window')!.appendChild(ref_btn);
         resRel = false
     }
 })

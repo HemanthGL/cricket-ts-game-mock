@@ -39,7 +39,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var _a, _b, _c;
+var _a, _b, _c, _d;
 var _this = this;
 // OOPS MODEL FOR TS
 var Team = /** @class */ (function () {
@@ -131,7 +131,6 @@ function timerFor1S() {
     });
 }); });
 (_b = document.getElementById('t1-hitBtn')) === null || _b === void 0 ? void 0 : _b.addEventListener('click', function () {
-    var _a, _b, _c, _d, _e;
     console.log('clicked btn ');
     console.log(team1Go, ' sp other ', team2Go);
     if (nextTeam || !team1Go || !inningActive) {
@@ -148,8 +147,8 @@ function timerFor1S() {
     t1.team_score += sc;
     // Updates into HTML: teamscore, ballscore, playerscore
     if (sc == 0) {
-        (_a = document.getElementById("t1-p".concat(currPlayer, "-b").concat(currBall))) === null || _a === void 0 ? void 0 : _a.innerText = 'W';
-        (_b = document.getElementById("t1-p".concat(currPlayer, "-total-score"))) === null || _b === void 0 ? void 0 : _b.innerText = t1.tot_score[currPlayer - 1].toString();
+        document.getElementById("t1-p".concat(currPlayer, "-b").concat(currBall)).innerText = 'W';
+        document.getElementById("t1-p".concat(currPlayer, "-total-score")).innerText = t1.tot_score[currPlayer - 1].toString();
         if (currPlayer == 10) {
             // call condition for inning end
             // currPlayer = 1
@@ -162,10 +161,10 @@ function timerFor1S() {
         }
     }
     else {
-        (_c = document.getElementById("t1-p".concat(currPlayer, "-b").concat(currBall))) === null || _c === void 0 ? void 0 : _c.innerText = sc.toString();
-        (_d = document.getElementById("t1-p".concat(currPlayer, "-total-score"))) === null || _d === void 0 ? void 0 : _d.innerText = t1.tot_score[currPlayer - 1].toString();
+        document.getElementById("t1-p".concat(currPlayer, "-b").concat(currBall)).innerText = sc.toString();
+        document.getElementById("t1-p".concat(currPlayer, "-total-score")).innerText = t1.tot_score[currPlayer - 1].toString();
     }
-    (_e = document.getElementById("team1Score")) === null || _e === void 0 ? void 0 : _e.innerText = t1.team_score.toString();
+    document.getElementById("team1Score").innerText = t1.team_score.toString();
     currBall += 1;
     if (currBall == 7) {
         currBall = 1;
@@ -192,7 +191,6 @@ function timerFor1S() {
     // currTeam += 1
 });
 (_c = document.getElementById('t2-hitBtn')) === null || _c === void 0 ? void 0 : _c.addEventListener('click', function () {
-    var _a, _b, _c, _d, _e;
     if (!nextTeam || !team2Go || !inningActive) {
         return;
     }
@@ -206,8 +204,8 @@ function timerFor1S() {
     t2.team_score += sc;
     // Updates into HTML: teamscore, ballscore, playerscore
     if (sc == 0) {
-        (_a = document.getElementById("t2-p".concat(currPlayer, "-b").concat(currBall))) === null || _a === void 0 ? void 0 : _a.innerText = 'W';
-        (_b = document.getElementById("t2-p".concat(currPlayer, "-total-score"))) === null || _b === void 0 ? void 0 : _b.innerText = t2.tot_score[currPlayer - 1].toString();
+        document.getElementById("t2-p".concat(currPlayer, "-b").concat(currBall)).innerText = 'W';
+        document.getElementById("t2-p".concat(currPlayer, "-total-score")).innerText = t2.tot_score[currPlayer - 1].toString();
         if (currPlayer == 10) {
             // call condition for inning end
             // currPlayer = 1
@@ -220,10 +218,10 @@ function timerFor1S() {
         }
     }
     else {
-        (_c = document.getElementById("t2-p".concat(currPlayer, "-b").concat(currBall))) === null || _c === void 0 ? void 0 : _c.innerText = sc.toString();
-        (_d = document.getElementById("t2-p".concat(currPlayer, "-total-score"))) === null || _d === void 0 ? void 0 : _d.innerText = t2.tot_score[currPlayer - 1].toString();
+        document.getElementById("t2-p".concat(currPlayer, "-b").concat(currBall)).innerText = sc.toString();
+        document.getElementById("t2-p".concat(currPlayer, "-total-score")).innerText = t2.tot_score[currPlayer - 1].toString();
     }
-    (_e = document.getElementById("team2Score")) === null || _e === void 0 ? void 0 : _e.innerText = t2.team_score.toString();
+    document.getElementById("team2Score").innerText = t2.team_score.toString();
     currBall += 1;
     if (currBall == 7) {
         currBall = 1;
@@ -245,7 +243,7 @@ function timerFor1S() {
         nextTeam = false;
     }
 });
-document.getElementById('match-resultGen').addEventListener('click', function () {
+(_d = document.getElementById('match-resultGen')) === null || _d === void 0 ? void 0 : _d.addEventListener('click', function () {
     console.log('match res called');
     if (resRel) {
         console.log('match res fn entered succesfully');
@@ -305,7 +303,7 @@ document.getElementById('match-resultGen').addEventListener('click', function ()
         console.log('This is ending here after man match');
         var ref_btn = document.createElement('button');
         ref_btn.textContent = 'NEW MATCH';
-        ref_btn.addEventListener('click', function () { window.location.reload(true); });
+        ref_btn.addEventListener('click', function () { window.location.reload(); });
         document.getElementById('results-window').appendChild(ref_btn);
         resRel = false;
     }
