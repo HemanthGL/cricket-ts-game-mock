@@ -1,0 +1,31 @@
+table, td{
+    border: 1px solid;
+    min-width: 3vw;
+    text-align: center;
+}
+.dashboard{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 8vh 0vw;
+    text-align: center;
+}
+.results-window{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    margin: 4vh 0vw;
+}
+
+.score-card{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.results-toggle{
+    display: flex;
+    justify-content: center;
+}
+.gen-res, .man-match{
+    text-align: center;
+}

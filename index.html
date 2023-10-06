@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="dashboard">
+            <div class="team1Panel">
+
+                <div class="teamLabel">
+                    TEAM 1 SCORE
+                </div>
+                <div id="team1Score">
+                    0
+                </div>
+                <div class="team1Hit">
+                    <button type="button" id="t1-hitBtn">HIT!</button>
+                </div>
+
+            </div>
+
+            <div class="refPanel">
+                
+                <div class="teamLabel">
+                    TIMER
+                </div>
+
+                <div id="timer-dial">
+                    60
+                </div>
+
+                <div class="match-start">
+                    <button type="button" id="match-startBtn">START</button>
+                </div>
+
+            </div>
+
+            <div class="team2Panel">
+
+                <div class="teamLabel">
+                    TEAM 2 SCORE
+                </div>
+                <div id="team2Score">
+                    0
+                </div>
+                <div class="team2Hit">
+                    <button type="button" id="t2-hitBtn">HIT!</button>
+                </div>
+
+            </div>
+
+        </div>
+        <div id="results-window">
+            
+            <div class="results-toggle">
+                <button type="button" id="match-resultGen">GENERATE RESULTS</button>
+            </div>
+
+            <div id="gen-res">
+
+            </div>
+
+            <div id="man-match">
+                
+            </div>
+
+        </div>
+
+        <div class="score-card">
+            <div class="team1">
+                <table>
+                    <tr>
+                        <td>Team 1</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>Total</td>
+                    </tr>
+                    <tr class="t1-pl1">
+                        <td class="t1-plLabel">Player1</td>
+                        <td id="t1-p1-b1"></td>
+                        <td id="t1-p1-b2"></td>
+                        <td id="t1-p1-b3"></td>
+                        <td id="t1-p1-b4"></td>
+                        <td id="t1-p1-b5"></td>
+                        <td id="t1-p1-b6"></td>
+                        <td id="t1-p1-total-score"></td>
+                    </tr>
+                    <tr class="t1-pl2">
+                        <td class="t1-plLabel">Player2</td>
+                        <td id="t1-p2-b1"></td>
+                        <td id="t1-p2-b2"></td>
+                        <td id="t1-p2-b3"></td>
+                        <td id="t1-p2-b4"></td>
+                        <td id="t1-p2-b5"></td>
+                        <td id="t1-p2-b6"></td>
+                        <td id="t1-p2-total-score"></td>
+
+                    </tr>
+
+                    <tr class="t1-pl3">
+                        <td id="t1-plLabel">Player3</td>
+                        <td id="t1-p3-b1"></td>
+                        <td id="t1-p3-b2"></td>
+                        <td id="t1-p3-b3"></td>
+                        <td id="t1-p3-b4"></td>
+                        <td id="t1-p3-b5"></td>
+                        <td id="t1-p3-b6"></td>
+                        <td id="t1-p3-total-score"></td>
+                    </tr>
+
+                    <tr class="t1-pl4">
+                        <td class="t1-plLabel">Player4</td>
+                        <td id="t1-p4-b1"></td>
+                        <td id="t1-p4-b2"></td>
+                        <td id="t1-p4-b3"></td>
+                        <td id="t1-p4-b4"></td>
+                        <td id="t1-p4-b5"></td>
+                        <td id="t1-p4-b6"></td>
+                        <td id="t1-p4-total-score"></td>
+                    </tr>
+
+                    <tr class="t1-pl5">
+                        <td class="t1-plLabel">Player5</td>
+                        <td id="t1-p5-b1"></td>
+                        <td id="t1-p5-b2"></td>
+                        <td id="t1-p5-b3"></td>
+                        <td id="t1-p5-b4"></td>
+                        <td id="t1-p5-b5"></td>
+                        <td id="t1-p5-b6"></td>
+                        <td id="t1-p5-total-score"></td>
+                    </tr>
+
+                    <tr class="t1-pl6">
+                        <td class="t1-plLabel">Player6</td>
+                        <td id="t1-p6-b1"></td>
+                        <td id="t1-p6-b2"></td>
+                        <td id="t1-p6-b3"></td>
+                        <td id="t1-p6-b4"></td>
+                        <td id="t1-p6-b5"></td>
+                        <td id="t1-p6-b6"></td>
+                        <td id="t1-p6-total-score"></td>
+                    </tr>
+
+                    <tr class="t1-pl7">
+                        <td class="t1-plLabel">Player7</td>
+                        <td id="t1-p7-b1"></td>
+                        <td id="t1-p7-b2"></td>
+                        <td id="t1-p7-b3"></td>
+                        <td id="t1-p7-b4"></td>
+                        <td id="t1-p7-b5"></td>
+                        <td id="t1-p7-b6"></td>
+                        <td id="t1-p7-total-score"></td>
+                    </tr>
+
+                    <tr class="t1-pl8">
+                        <td class="t1-plLabel">Player8</td>
+                        <td id="t1-p8-b1"></td>
+                        <td id="t1-p8-b2"></td>
+                        <td id="t1-p8-b3"></td>
+                        <td id="t1-p8-b4"></td>
+                        <td id="t1-p8-b5"></td>
+                        <td id="t1-p8-b6"></td>
+                        <td id="t1-p8-total-score"></td>
+                    </tr>
+
+                    <tr class="t1-pl9">
+                        <td class="t1-plLabel">Player9</td>
+                        <td id="t1-p9-b1"></td>
+                        <td id="t1-p9-b2"></td>
+                        <td id="t1-p9-b3"></td>
+                        <td id="t1-p9-b4"></td>
+                        <td id="t1-p9-b5"></td>
+                        <td id="t1-p9-b6"></td>
+                        <td id="t1-p9-total-score"></td>
+                    </tr>
+
+                    <tr class="t1-pl10">
+                        <td class="t1-plLabel">Player10</td>
+                        <td id="t1-p10-b1"></td>
+                        <td id="t1-p10-b2"></td>
+                        <td id="t1-p10-b3"></td>
+                        <td id="t1-p10-b4"></td>
+                        <td id="t1-p10-b5"></td>
+                        <td id="t1-p10-b6"></td>
+                        <td id="t1-p10-total-score"></td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="team2">
+                <table>
+                    <tr>
+                        <td>Team 2</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>Total</td>
+                    </tr>
+                    <tr class="t2-pl1">
+                        <td class="t2-plLabel">Player1</td>
+                        <td id="t2-p1-b1"></td>
+                        <td id="t2-p1-b2"></td>
+                        <td id="t2-p1-b3"></td>
+                        <td id="t2-p1-b4"></td>
+                        <td id="t2-p1-b5"></td>
+                        <td id="t2-p1-b6"></td>
+                        <td id="t2-p1-total-score"></td>
+                    </tr>
+
+                    <tr class="t2-pl2">
+                        <td class="t2-plLabel">Player2</td>
+                        <td id="t2-p2-b1"></td>
+                        <td id="t2-p2-b2"></td>
+                        <td id="t2-p2-b3"></td>
+                        <td id="t2-p2-b4"></td>
+                        <td id="t2-p2-b5"></td>
+                        <td id="t2-p2-b6"></td>
+                        <td id="t2-p2-total-score"></td>
+                    </tr>
+
+                    <tr class="t2-pl3">
+                        <td class="t2-plLabel">Player3</td>
+                        <td id="t2-p3-b1"></td>
+                        <td id="t2-p3-b2"></td>
+                        <td id="t2-p3-b3"></td>
+                        <td id="t2-p3-b4"></td>
+                        <td id="t2-p3-b5"></td>
+                        <td id="t2-p3-b6"></td>
+                        <td id="t2-p3-total-score"></td>
+                    </tr>
+
+                    <tr class="t2-pl4">
+                        <td class="t2-plLabel">Player4</td>
+                        <td id="t2-p4-b1"></td>
+                        <td id="t2-p4-b2"></td>
+                        <td id="t2-p4-b3"></td>
+                        <td id="t2-p4-b4"></td>
+                        <td id="t2-p4-b5"></td>
+                        <td id="t2-p4-b6"></td>
+                        <td id="t2-p4-total-score"></td>
+                    </tr>
+
+                    <tr class="t2-pl5">
+                        <td class="t2-plLabel">Player5</td>
+                        <td id="t2-p5-b1"></td>
+                        <td id="t2-p5-b2"></td>
+                        <td id="t2-p5-b3"></td>
+                        <td id="t2-p5-b4"></td>
+                        <td id="t2-p5-b5"></td>
+                        <td id="t2-p5-b6"></td>
+                        <td id="t2-p5-total-score"></td>
+                    </tr>
+
+                    <tr class="t2-pl6">
+                        <td class="t2-plLabel">Player6</td>
+                        <td id="t2-p6-b1"></td>
+                        <td id="t2-p6-b2"></td>
+                        <td id="t2-p6-b3"></td>
+                        <td id="t2-p6-b4"></td>
+                        <td id="t2-p6-b5"></td>
+                        <td id="t2-p6-b6"></td>
+                        <td id="t2-p6-total-score"></td>
+                    </tr>
+
+                    <tr class="t2-pl7">
+                        <td class="t2-plLabel">Player7</td>
+                        <td id="t2-p7-b1"></td>
+                        <td id="t2-p7-b2"></td>
+                        <td id="t2-p7-b3"></td>
+                        <td id="t2-p7-b4"></td>
+                        <td id="t2-p7-b5"></td>
+                        <td id="t2-p7-b6"></td>
+                        <td id="t2-p7-total-score"></td>
+                    </tr>
+
+                    <tr class="t2-pl8">
+                        <td class="t2-plLabel">Player8</td>
+                        <td id="t2-p8-b1"></td>
+                        <td id="t2-p8-b2"></td>
+                        <td id="t2-p8-b3"></td>
+                        <td id="t2-p8-b4"></td>
+                        <td id="t2-p8-b5"></td>
+                        <td id="t2-p8-b6"></td>
+                        <td id="t2-p8-total-score"></td>
+                    </tr>
+
+                    <tr class="t2-pl9">
+                        <td class="t2-plLabel">Player9</td>
+                        <td id="t2-p9-b1"></td>
+                        <td id="t2-p9-b2"></td>
+                        <td id="t2-p9-b3"></td>
+                        <td id="t2-p9-b4"></td>
+                        <td id="t2-p9-b5"></td>
+                        <td id="t2-p9-b6"></td>
+                        <td id="t2-p9-total-score"></td>
+                    </tr>
+
+                    <tr class="t2-pl10">
+                        <td class="t2-plLabel">Player10</td>
+                        <td id="t2-p10-b1"></td>
+                        <td id="t2-p10-b2"></td>
+                        <td id="t2-p10-b3"></td>
+                        <td id="t2-p10-b4"></td>
+                        <td id="t2-p10-b5"></td>
+                        <td id="t2-p10-b6"></td>
+                        <td id="t2-p10-total-score"></td>    
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+</body>
+</html>
